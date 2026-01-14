@@ -1,57 +1,21 @@
-# Azure Cognitive Search .NET Samples
+# C# samples for Azure AI Search
 
-This repository contains C# sample code used in Azure Cognitive Search quickstarts, tutorials, and examples in product documentation. Unless otherwise noted, all samples run on the shared (free) pricing tier of an Azure Cognitive Search service.  
+This repository contains C# code samples used in Azure AI Search quickstarts and tutorials. Unless noted otherwise, all samples run on the shared (free) pricing tier of an [Azure AI Search service](https://learn.microsoft.com/azure/search/search-create-service-portal).
 
-## Quickstart
+## In this repository
 
-"Day One" introduction to the fundamental tasks of working with a search index: create, load, and query. This quickstart is a .NET Core console application that outputs the status of each operation, concluding with a series of sample queries as a validation step that the index exists and contains content. The index is modeled on a subset of the Hotels dataset, widely used in Cognitive Search samples, but reduced here for readability and comprehension. 
+| Sample | Quickstart or tutorial | Description |
+|--------|------------------------|-------------|
+| quickstart-agentic-retrieval | [Quickstart: Agentic retrieval](https://learn.microsoft.com/azure/search/search-get-started-agentic-retrieval?pivots=programming-language-rest) | Sets up a knowledge base in Azure AI Search to integrate LLM reasoning into query planning. We recommend the Basic tier or higher for this quickstart. |
+| quickstart-keyword-search | [Quickstart: Full-text search](https://learn.microsoft.com/azure/search/search-get-started-text?tabs=keyless%2Cwindows&pivots=csharp) | Learn the fundamental tasks of working with a search index: create, load, and query for full-text search scenarios. This quickstart is a console application. The index is modeled on a subset of the Hotels dataset, widely used in Azure AI Search samples, but reduced to just four hotels for readability and comprehension. |
+| quickstart-semantic-ranking | [Quickstart: Semantic ranking](https://learn.microsoft.com/azure/search/search-get-started-semantic?pivots=csharp) | Adds semantic ranking to an existing hotels-sample-index and formulates semantic queries. |
+| quickstart-vector-search | [Quickstart: Vector search](https://learn.microsoft.com/azure/search/search-get-started-vector?tabs=keyless&pivots=javascript) | Creates a small hotels index that includes vectorized descriptions, and formulates vector queries. |
+| tutorial-ai-enrichment | [C# Tutorial: Use skillsets to generate searchable content](https://learn.microsoft.com/azure/search/cognitive-search-tutorial-blob-dotnet) | Creates an AI enrichment pipeline consisting of an index, indexer, data source, and skillset. The skillset calls Azure AI Services image analysis and OCR, and natural language processing, extract information and structure from heterogeneous blob content, making it searchable in Azure AI Search. |
 
-This sample is available in two versions:
+## More resources
 
-+ **v10** uses the previous [Microsoft.Azure.Search](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/search/client10) client libraries
-+ **v11** uses the new [Azure.Search.Documents](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme) client library, highly recommended for all new projects
++ See [Vector samples in Azure AI Search](https://github.com/Azure/azure-search-vector-samples/tree/main/demo-dotnet) for code samples that call the Azure SDK for .NET.
 
-## Create your first app
++ See [.NET samples in Azure AI Search](https://learn.microsoft.com/azure/search/samples-dotnet) for a comprehensive list of all Azure AI Search code samples that run on .NET.
 
-This MVC sample is a collection of projects that demonstrate a user experience using fictitious hotels data. The first project creates a basic search page. Additional projects build on the first, adding pagination, autocomplete and suggested queries, and ordered results. The index is pre-built and hosted so that you can focus on the application itself.
-
-This sample is available in two versions:
-
-+ **v10** uses the previous [Microsoft.Azure.Search](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/search/client10) client libraries
-+ **v11** uses the new [Azure.Search.Documents](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme) client library, highly recommended for all new projects
-
-## Multiple data sources
-
-This .NET Core console app uses Azure Cognitive Search indexers and the .NET SDK to import data from Azure Cosmos DB and Azure Blob storage, combing data from two sources into one search index.
-
-This sample is available in two versions:
-
-+ **v10** uses the previous [Microsoft.Azure.Search](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/search/client10) client libraries
-+ **v11** uses the new [Azure.Search.Documents](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme) client library, highly recommended for all new projects
-
-## Backup and restore an index
-
-This .NET Core console app backs up an index (schema and documents) to your local computer and then uses the stored backup to recreate the index in a target search service that you specify. This sample can be helpful if you want to move an index into a different pricing tier. For example, you may use the Basic or Free pricing tier to develop your index, and then move it to the Standard or higher tier for production use.
-
-This sample is available in two versions:
-
-+ **v10** uses the previous [Microsoft.Azure.Search](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/search/client10) client libraries
-+ **v11** uses the new [Azure.Search.Documents](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme) client library, highly recommended for all new projects
-
-## Optimize data indexing
-
-This .NET Core console app builds off of the code used in the Quickstart and uses the Azure Cognitive Search .NET SDK to create an index, and efficiently load it with documents. The app allows users to test various batch sizes to understand the optimal batch size and then demonstrates how to efficiently upload 100,000 documents to a search index. This is done by splitting the data into batches, and spinning up several threads to upload the documents. Any failures are monitored and then retried using the exponential backoff retry strategy. The index is modeled on a subset of the Hotels dataset, reduced for readability and comprehension. Index definition and documents are included in the code.
-
-This sample is available in two versions:
-
-+ **v10** uses the previous [Microsoft.Azure.Search](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/search/client10) client libraries
-+ **v11** uses the new [Azure.Search.Documents](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme) client library, highly recommended for all new projects
-
-## AI Enrichment
-
-This .NET Core console app creates an AI enrichment pipeline consisting of an index, indexer, data source, and skillset. The skillset calls Azure Cognitive Services image analysis and OCR, and natural language processing, extract information and structure from heterogeneous blob content, making it searchable in Azure Cognitive Search.
-
-This sample is available in two versions:
-
-+ **v10** uses the previous [Microsoft.Azure.Search](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/search/client10) client libraries
-+ **v11** uses the new [Azure.Search.Documents](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme) client library, highly recommended for all new projects
++ See [Azure AI Search documentation](https://learn.microsoft.com/azure/search) for product documentation.
